@@ -2,7 +2,9 @@
 title: "TALLER R - Estadistica y programación"
 author: "Alejandro Correa Jimenez - 202022775"
 date: "2024-05-31"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -22,7 +24,7 @@ library(viridis)
 Inicialmente se identifica la fuente del conjunto de datos.
 
 <center>
-![ ](datos.png)
+![ ](datos.png){width=50%}
 </center>
 
 ### 1.1. Obtención de URLs
@@ -37,7 +39,7 @@ url_full <- html_nodes(tmp, "a") %>% html_attr("href")
 
 ### 1.2. Filtro de URLs
 
-Del conjunto completo de URLs, seleccionamos aquellas que en la posición 43 contienen la palabra propiedad
+Del conjunto completo de URLs, seleccionamos aquellas que en la posición 42 contienen la palabra propiedad
 
 ```{r}
 url_subset <- url_full[which(substring(url_full,42,50)=="propiedad")]
